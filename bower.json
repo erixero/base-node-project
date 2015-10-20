@@ -1,0 +1,22 @@
+{
+  "name": "base-node-project",
+  "description": "Base Node App",
+  "authors": [
+    {
+      "name": "Erick Quinteros",
+      "email": "ebryan666@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com"
+  },
+  "license": "GPL-3.0",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.7"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.7"
+  }
+}

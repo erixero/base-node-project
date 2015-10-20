@@ -1,0 +1,5 @@
+# Ignore packages
+src/client/libs
+
+# Ignore temporary files
+.bower

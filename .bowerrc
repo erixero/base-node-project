@@ -1,0 +1,13 @@
+{
+  "directory": "src/client/libs",
+  "analytics": false,
+  "color": true,
+  "timeout": 60000,
+  "tmp": ".bower/tmp",
+  "interactive": true,
+  "storage": {
+    "packages" : ".bower/packages",
+    "registry" : ".bower/registry",
+    "links" : ".bower/links"
+  }
+}
