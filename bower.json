@@ -9,9 +9,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com"
+    "url": "https://github.com/erixero/base-node-project.git"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "angular": "~1.4.7"
