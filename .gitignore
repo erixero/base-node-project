@@ -1,5 +1,6 @@
 # Ignore packages
 src/client/libs
+node_modules
 
 # Ignore temporary files
 .bower

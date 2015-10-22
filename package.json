@@ -1,0 +1,23 @@
+{
+  "name": "base-node-project",
+  "version": "1.0.0",
+  "description": "Base Node App",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erixero/base-node-project.git"
+  },
+  "contributors": [
+    {
+      "name": "Erick Quinteros",
+      "email": "ebryan666@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
