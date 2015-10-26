@@ -2,5 +2,8 @@
 src/client/libs
 node_modules
 
+# Ignore build folder
+build
+
 # Ignore temporary files
 .bower

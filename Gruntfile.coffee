@@ -1,3 +1,6 @@
+# Grunt library that allows you to break up your Gruntfile config by task.
+# https://github.com/firstandthird/load-grunt-config
+
 module.exports = (grunt) ->
 
   taskLoader = require 'load-grunt-config'
