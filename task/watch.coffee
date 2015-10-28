@@ -4,7 +4,7 @@
 module.exports =
   options:
     interrupt: true
-    atBegin: true
+    atBegin: false
   client_images:
     files: ['src/client/assets/images/**/*.{png,jpg,gif,svg}']
     tasks: ['newer:imagemin:client_images']
