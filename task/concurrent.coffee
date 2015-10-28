@@ -28,3 +28,18 @@ module.exports =
     'coffee:server_app'
     'coffee:server_test'
   ]
+
+  clean_client: [
+    'clean:client_app'
+    'clean:client_test'
+  ]
+
+  clean_server: [
+    'clean:server_app'
+    'clean:server_test'
+  ]
+
+  clean_build: [
+    'clean:client_javascript'
+    'clean:build_tests'
+  ]
