@@ -7,4 +7,4 @@ module.exports =
     atBegin: true
   client_images:
     files: ['src/client/assets/images/**/*.{png,jpg,gif,svg}']
-    tasks: ['imagemin:client_images']
+    tasks: ['newer:imagemin:client_images']
