@@ -13,11 +13,11 @@ module.exports =
     'concurrent:minify_client_images'
     'concurrent:compile_client'
     'concurrent:compile_server'
+    'copy:client_libraries'
   ]
 
   client_tdd: [
     'concurrent:clean_client'
-    'concurrent:minify_client_images'
     'concurrent:compile_client'
     'watch:client_app'
   ]
