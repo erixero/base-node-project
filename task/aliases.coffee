@@ -14,6 +14,7 @@ module.exports =
     'concurrent:compile_client'
     'concurrent:compile_server'
     'copy:client_libraries'
+    'jade:client_app'
   ]
 
   client_tdd: [
@@ -26,4 +27,11 @@ module.exports =
     'concurrent:clean_server'
     'concurrent:compile_server'
     'watch:server_app'
+  ]
+
+  client_view: [
+    'concurrent:clean_client'
+    'concurrent:minify_client_images'
+    'jade:client_app'
+    'watch:client_view'
   ]

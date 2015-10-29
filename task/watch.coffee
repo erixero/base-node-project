@@ -6,10 +6,18 @@ module.exports =
   options:
     interrupt: true
     atBegin: false
+    event: ['added', 'modified', 'deleted'],
 
-  client_images:
-    files: ['src/client/assets/images/**/*.{png,jpg,gif,svg}']
-    tasks: ['newer:imagemin:client_images']
+  client_view:
+    files: [
+      'src/client/assets/images/**/*.{png,jpg,gif,svg}'
+      'src/client/**/*.jade'
+      '!src/client/libs/'
+    ]
+    tasks: [
+      'newer:imagemin:client_images'
+      'newer:jade:client_app'
+    ]
 
   client_app:
     files: ['src/client/app/**/*.coffee']
