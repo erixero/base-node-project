@@ -1,0 +1,160 @@
+FORMAT: 1A
+
+# Basic apiary examples
+
+
+## Simplest example [/example]
+
+### GET example [GET]
+Description of GET example
++ Request
+    + Headers
+
+            name: Erick
+    
++ Response 200 (aplication/json)
+
+        {
+            "status": "ok"
+        }
+
+### POST example [POST]
+Description of POST example
++ Request (application/json)
+
+        {
+            "example": "POST example name"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /example
+
+    + Body
+
+            {
+                "url": "/example",
+                "examples": [
+                "choices": [
+                    {
+                        "choice": "1",
+                        "url": "/example/1",
+                    }
+                ]
+            }
+            
+### Delete [DELETE]
+Description of a delete action
++ Response 204
+
+
+## Example with parameters [/parameters/{id}/{?query1,query2}]
++ Parameters
+    + id - A path variable that is required for a valid URL
+    + query1 (optional) - A query variable
+    + query2 (optional) - Another query variable
+    
+### Retreive [GET]
++ Response 204
+
+## Several responses [/responses]
+### Retrieve Message [GET]
++ Request
+    + Headers
+
+            Authorization: Basic ABCDEF
+
++ Response 200 (application/json)
+
+        {
+            "message":"Hello World!"
+        }
+
++ Request (application/json)
+    + Body
+
+            {
+               "grant_type": "client_credentials"
+            }
+
++ Response 401 (text/plain)
+
+        There is no such a message for you, dear guest.
+
++ Response 410 (text/plain)
+
+        The message you are searching for does not exist anymore.
+
+
+## Basic Authentication protected resource [/protected]
+
+### Status [GET]
++ Response 401
+    + Headers
+
+            WWW-Authenticate: Basic realm="protected"
+
++ Request
+    + Headers
+
+            Authorization: Basic ABC123
+
++ Response 200 (application/json)
+
+            {
+                "status": "ok"
+            }
+
+
+## OAuth token exchange [/oauth/token]
+Exchange credentials for `access_token`. Supported types:
+
++ `client_credentials`
++ [`urn:ietf:params:oauth:grant-type:jwt-bearer`](https://tools.ietf.org/html/draft-jones-oauth-jwt-bearer-03#section-6)
+
+### Exchange credentials for token [POST]
++ Request
+    + Attributes (OAuth grant request)
+    + Headers
+
+            Authorization: Basic ABCDEF
+
++ Response 200 (application/json)
+    + Attributes (OAuth valid response)
+
++ Request
+    + Attributes (OAuth jwt-bearer grant request)
+
++ Response 200 (application/json)
+    + Attributes (OAuth valid response)
+
+
+## OAuth 2 Bearer Token protected resource [/bearerProtected]
+### Status [GET]
++ Request
+    + Headers
+
+            Authentication: Bearer JWT
+
++ Response 200 (application/json)
+    + Attributes (Server response)
+
+
+# Data Structures
+## OAuth grant request (object)
++ `grant_type`: `client_credentials` (string, required)
+
+## OAuth jwt-bearer grant request (object)
++ `grant_type`: `urn:ietf:params:oauth:grant-type:jwt-bearer` (string, required)
++ assertion: `eyJhbGciOiJIUzI1NiJ9.e30.XmNK3GpH3Ys_7wsYBfq4C3M6goz71I7dTgUkuIa5lyQ` (string, required)
+
+## OAuth valid response (object)
++ `access_token`: `eyJhbGciOiJIUzI1NiJ9.e30.XmNK3GpH3Ys_7wsYBfq4C3M6goz71I7dTgUkuIa5lyQ` (string, required) - valid JWT
++ scope: all (string, required) - scopes of current token
++ `expires_in`: 300 (number, required)
++ `token_type`: Bearer (string, required)
+
+## Server response (object)
++ status: ok (string, required)
